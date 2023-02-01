@@ -21,11 +21,28 @@ public class ParseIntegers {
         String justWords = "";
         while (words.hasNext()) {
             String next = words.next();
+
+            try {
             int number = Integer.parseInt(next);
+                /*for (int i = 0; i < next.length(); i++) {
+                    if(Character.isDigit(next.charAt(i)))
+                        sum=sum+Character.getNumericValue(next.charAt(i));
+                }*/
+                sum = sum + number;
+
+
+            }
+            catch (NumberFormatException nfe){
+                //System.out.println(nfe);
+                justWords= justWords + next + " ";
+            }
+
             // todo: complete it
         }
-        System.out.println("Sum is " + sum);
-        System.out.println("Just words:" + justWords);
+
+        System.out.println();
+       System.out.println("Sum is " + sum);
+       System.out.println("Just words: " + justWords);
     }
 }
 
